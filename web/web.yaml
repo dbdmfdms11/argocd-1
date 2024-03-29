@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-nginx-service3
+  name: my-nginx-service
 spec:
   selector:
-    app: my-nginx-app3
+    app: my-nginx-app
   ports:
     - protocol: TCP
       port: 80
@@ -15,16 +15,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-nginx-deployment3
+  name: my-nginx-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-nginx-app3
+      app: my-nginx-app
   template:
     metadata:
       labels:
-        app: my-nginx-app3
+        app: my-nginx-app
     spec:
       containers:
         - name: my-nginx-container
